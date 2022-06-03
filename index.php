@@ -31,7 +31,7 @@ $films = $manager->getAll();
 
   <?php endforeach ?>
 </div>
-<div class="btn warning m-2">
+<div class="btn warning m-5">
   <a class="button-publier" href="createFilm.php">Publier un film</a>
 </div>
 
