@@ -24,11 +24,11 @@
          *
          * @return  self
          */
-        public function setTitle(string $title)
+        public function setTitle($title)
         {
-
-            $this->title = $title;
-
+            if (is_string($title) && strlen($title) > 2 && strlen($title) < 60) {
+                $this->title =  htmlspecialchars($title);
+            }
             return $this;
         }
 
@@ -45,11 +45,12 @@
          *
          * @return  self
          */
-        public function setText(string $text)
+        public function setText($text)
         {
+            if (is_string($text) && strlen($text) > 4 && strlen($text) < 255) {
 
-            $this->text = $text;
-
+                $this->text = htmlspecialchars($text);
+            }
             return $this;
         }
 
@@ -87,7 +88,7 @@
          *
          * @return  self
          */
-        public function setDate($date)
+        public function setDate(string $date)
         {
             $this->date = $date;
 

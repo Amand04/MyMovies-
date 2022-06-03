@@ -11,7 +11,7 @@ class FilmsManager extends BaseManager
         $req->bindValue(":text", $film->getText(), PDO::PARAM_STR);
         $req->bindValue(":image", $film->getImage(), PDO::PARAM_STR);
         $req->bindValue(":date", $film->getDate(), PDO::PARAM_STR);
-        $req->bindValue(":type", $film->getType(), PDO::PARAM_INT);
+        $req->bindValue(":type", $film->getType(), PDO::PARAM_STR);
 
         $req->execute();
     }
@@ -24,8 +24,15 @@ class FilmsManager extends BaseManager
         $req->bindValue(":text", $film->getText(), PDO::PARAM_STR);
         $req->bindValue(":image", $film->getImage(), PDO::PARAM_STR);
         $req->bindValue(":date", $film->getDate(), PDO::PARAM_STR);
-        $req->bindValue(":type", $film->getType(), PDO::PARAM_INT);
+        $req->bindValue(":type", $film->getType(), PDO::PARAM_STR);
         $req->bindValue(":id", $film->getId(), PDO::PARAM_INT);
+        $req->execute();
+    }
+
+    public function delete(int $id)
+    {
+        $req = $this->pdo->prepare("DELETE FROM `film` WHERE id = :id");
+        $req->bindValue(":id", $id, PDO::PARAM_INT);
         $req->execute();
     }
 

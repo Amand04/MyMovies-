@@ -7,16 +7,17 @@ body {
 .php {
   color: rgb(184, 133, 5);
 }
-.MyMovies {
-  color: rgb(189, 141, 22);
-  font-size: 40px;
-  margin-top: 15px;
-}
+
 h1 {
   color: rgb(189, 141, 22);
 }
+
 h3 {
   color: rgb(189, 141, 22);
+}
+
+.card-title {
+  font-weight: bold;
 }
 
 .logo {
